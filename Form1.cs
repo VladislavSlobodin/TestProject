@@ -189,12 +189,30 @@ public partial class Form1 : Form
     }
 
     private async Task<int> AddToDatabase(List<string> entities) => await DatabaseManager.WriteAsync(entities);
-    
+
     private void UpdateLabels(int count)
     {
         StringsLeftLabel.Tag = Convert.ToInt32(StringsLeftLabel.Tag) - count;
         StringsLeftLabel.Text = $"Strings left: {StringsLeftLabel.Tag}";
         StringsImportedLabel.Tag = Convert.ToInt32(StringsImportedLabel.Tag) + count;
         StringsImportedLabel.Text = $"Strings imported: {StringsImportedLabel.Tag}";
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        BalanceUnit balanceUnit = new()
+        {
+            Id = 1,
+            AccountId = 1,
+            BalanceType = BalanceType.ActiveOpeningBalance,
+            ClassId = 1,
+            Value = 1
+        };
+
+        using ExcelDbContext context = new();
+        context.BalanceUnits.Add(balanceUnit);
+        context.SaveChanges();
+
+        MessageBox.Show(context.BalanceUnits.Count().ToString());
     }
 }

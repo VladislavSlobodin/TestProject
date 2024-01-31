@@ -60,12 +60,17 @@
             mergeToolStripMenuItem = new ToolStripMenuItem();
             importToDatabaseToolStripMenuItem = new ToolStripMenuItem();
             tabPage2 = new TabPage();
+            menuStrip2 = new MenuStrip();
+            menuToolStripMenuItem1 = new ToolStripMenuItem();
+            importFromExcelToolStripMenuItem = new ToolStripMenuItem();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             ImportPanel.SuspendLayout();
             MergePanel.SuspendLayout();
             CreatePanel.SuspendLayout();
             menuStrip1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // LinesCountTextBox
@@ -346,33 +351,56 @@
             // createToolStripMenuItem
             // 
             createToolStripMenuItem.Name = "createToolStripMenuItem";
-            createToolStripMenuItem.Size = new Size(180, 22);
+            createToolStripMenuItem.Size = new Size(174, 22);
             createToolStripMenuItem.Text = "Create";
             createToolStripMenuItem.Click += createToolStripMenuItem_Click;
             // 
             // mergeToolStripMenuItem
             // 
             mergeToolStripMenuItem.Name = "mergeToolStripMenuItem";
-            mergeToolStripMenuItem.Size = new Size(180, 22);
+            mergeToolStripMenuItem.Size = new Size(174, 22);
             mergeToolStripMenuItem.Text = "Merge";
             mergeToolStripMenuItem.Click += mergeToolStripMenuItem_Click;
             // 
             // importToDatabaseToolStripMenuItem
             // 
             importToDatabaseToolStripMenuItem.Name = "importToDatabaseToolStripMenuItem";
-            importToDatabaseToolStripMenuItem.Size = new Size(180, 22);
+            importToDatabaseToolStripMenuItem.Size = new Size(174, 22);
             importToDatabaseToolStripMenuItem.Text = "Import to database";
             importToDatabaseToolStripMenuItem.Click += importToDatabaseToolStripMenuItem_Click;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(menuStrip2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(792, 422);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "Second task";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // menuStrip2
+            // 
+            menuStrip2.Items.AddRange(new ToolStripItem[] { menuToolStripMenuItem1 });
+            menuStrip2.Location = new Point(3, 3);
+            menuStrip2.Name = "menuStrip2";
+            menuStrip2.Size = new Size(786, 24);
+            menuStrip2.TabIndex = 0;
+            menuStrip2.Text = "menuStrip2";
+            // 
+            // menuToolStripMenuItem1
+            // 
+            menuToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { importFromExcelToolStripMenuItem });
+            menuToolStripMenuItem1.Name = "menuToolStripMenuItem1";
+            menuToolStripMenuItem1.Size = new Size(50, 20);
+            menuToolStripMenuItem1.Text = "Menu";
+            // 
+            // importFromExcelToolStripMenuItem
+            // 
+            importFromExcelToolStripMenuItem.Name = "importFromExcelToolStripMenuItem";
+            importFromExcelToolStripMenuItem.Size = new Size(180, 22);
+            importFromExcelToolStripMenuItem.Text = "Import from Excel";
             // 
             // Form1
             // 
@@ -380,6 +408,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tabControl1);
+            MainMenuStrip = menuStrip2;
             Name = "Form1";
             Text = "Form1";
             tabControl1.ResumeLayout(false);
@@ -393,6 +422,10 @@
             CreatePanel.PerformLayout();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            menuStrip2.ResumeLayout(false);
+            menuStrip2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -429,5 +462,8 @@
         private Button ImportButton;
         private Label StringsImportedLabel;
         private Label StringsLeftLabel;
+        private MenuStrip menuStrip2;
+        private ToolStripMenuItem menuToolStripMenuItem1;
+        private ToolStripMenuItem importFromExcelToolStripMenuItem;
     }
 }
